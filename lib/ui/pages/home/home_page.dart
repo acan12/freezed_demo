@@ -1,17 +1,21 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_demo/data/model/response/user/user_response.dart';
+import 'package:freezed_demo/repo/user/user_repository.dart';
 import 'package:freezed_demo/viewmodel/base_viewmodel.dart';
 import 'package:freezed_demo/viewmodel/user/profile_viewmodel.dart';
 
-class HomePage extends ConsumerWidget {
+final myprovider = StateNotifierProvider<ProfileViewModel, String>((ref) {
+  return ProfileViewModel("Maulana Ichsan");
+} );
 
+class HomePage extends ConsumerWidget {
   @override
-  Widget build(BuildContext context, WidgetRef widgetRef) {
-    // final _provider = BaseViewModel(){
-    //   return BaseViewModel().getMeta();
-    // };
+  Widget build(BuildContext context, WidgetRef ref) {
+    String name = ref.watch(myprovider);
 
     return Scaffold(
       appBar: AppBar(
@@ -22,10 +26,10 @@ class HomePage extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Your number',
+              'Your name',
             ),
-            const Text(
-              '085697366180',
+            Text(
+              '${name}',
               style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
             ),
           ],
