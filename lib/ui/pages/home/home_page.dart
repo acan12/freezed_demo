@@ -17,7 +17,7 @@ class HomePage extends ConsumerWidget {
       body: Center(
           child: apiProvider.when(
         data: (data) {
-          return getColumn(data.full_name);
+          return getColumn(data.email);
         },
         error: (err, stack) => Text("Errror: ${err.toString()}"),
         loading: () => Text("Loading..."),
