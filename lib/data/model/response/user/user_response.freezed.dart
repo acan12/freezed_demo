@@ -20,8 +20,8 @@ UserResponse _$UserResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserResponse {
-  Meta get meta => throw _privateConstructorUsedError;
-  Data get data => throw _privateConstructorUsedError;
+// required Meta meta,
+// required Data data,
   int get id => throw _privateConstructorUsedError;
   String get full_name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
@@ -38,11 +38,7 @@ abstract class $UserResponseCopyWith<$Res> {
   factory $UserResponseCopyWith(
           UserResponse value, $Res Function(UserResponse) then) =
       _$UserResponseCopyWithImpl<$Res>;
-  $Res call(
-      {Meta meta, Data data, int id, String full_name, String email, int age});
-
-  $MetaCopyWith<$Res> get meta;
-  $DataCopyWith<$Res> get data;
+  $Res call({int id, String full_name, String email, int age});
 }
 
 /// @nodoc
@@ -55,22 +51,12 @@ class _$UserResponseCopyWithImpl<$Res> implements $UserResponseCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? meta = freezed,
-    Object? data = freezed,
     Object? id = freezed,
     Object? full_name = freezed,
     Object? email = freezed,
     Object? age = freezed,
   }) {
     return _then(_value.copyWith(
-      meta: meta == freezed
-          ? _value.meta
-          : meta // ignore: cast_nullable_to_non_nullable
-              as Meta,
-      data: data == freezed
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as Data,
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -89,20 +75,6 @@ class _$UserResponseCopyWithImpl<$Res> implements $UserResponseCopyWith<$Res> {
               as int,
     ));
   }
-
-  @override
-  $MetaCopyWith<$Res> get meta {
-    return $MetaCopyWith<$Res>(_value.meta, (value) {
-      return _then(_value.copyWith(meta: value));
-    });
-  }
-
-  @override
-  $DataCopyWith<$Res> get data {
-    return $DataCopyWith<$Res>(_value.data, (value) {
-      return _then(_value.copyWith(data: value));
-    });
-  }
 }
 
 /// @nodoc
@@ -112,13 +84,7 @@ abstract class _$$_UserResponseCopyWith<$Res>
           _$_UserResponse value, $Res Function(_$_UserResponse) then) =
       __$$_UserResponseCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {Meta meta, Data data, int id, String full_name, String email, int age});
-
-  @override
-  $MetaCopyWith<$Res> get meta;
-  @override
-  $DataCopyWith<$Res> get data;
+  $Res call({int id, String full_name, String email, int age});
 }
 
 /// @nodoc
@@ -134,22 +100,12 @@ class __$$_UserResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? meta = freezed,
-    Object? data = freezed,
     Object? id = freezed,
     Object? full_name = freezed,
     Object? email = freezed,
     Object? age = freezed,
   }) {
     return _then(_$_UserResponse(
-      meta: meta == freezed
-          ? _value.meta
-          : meta // ignore: cast_nullable_to_non_nullable
-              as Meta,
-      data: data == freezed
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as Data,
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -174,9 +130,7 @@ class __$$_UserResponseCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_UserResponse implements _UserResponse {
   const _$_UserResponse(
-      {required this.meta,
-      required this.data,
-      required this.id,
+      {required this.id,
       required this.full_name,
       required this.email,
       this.age = 0});
@@ -184,10 +138,8 @@ class _$_UserResponse implements _UserResponse {
   factory _$_UserResponse.fromJson(Map<String, dynamic> json) =>
       _$$_UserResponseFromJson(json);
 
-  @override
-  final Meta meta;
-  @override
-  final Data data;
+// required Meta meta,
+// required Data data,
   @override
   final int id;
   @override
@@ -200,7 +152,7 @@ class _$_UserResponse implements _UserResponse {
 
   @override
   String toString() {
-    return 'UserResponse(meta: $meta, data: $data, id: $id, full_name: $full_name, email: $email, age: $age)';
+    return 'UserResponse(id: $id, full_name: $full_name, email: $email, age: $age)';
   }
 
   @override
@@ -208,8 +160,6 @@ class _$_UserResponse implements _UserResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UserResponse &&
-            const DeepCollectionEquality().equals(other.meta, meta) &&
-            const DeepCollectionEquality().equals(other.data, data) &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.full_name, full_name) &&
             const DeepCollectionEquality().equals(other.email, email) &&
@@ -220,8 +170,6 @@ class _$_UserResponse implements _UserResponse {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(meta),
-      const DeepCollectionEquality().hash(data),
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(full_name),
       const DeepCollectionEquality().hash(email),
@@ -242,9 +190,7 @@ class _$_UserResponse implements _UserResponse {
 
 abstract class _UserResponse implements UserResponse {
   const factory _UserResponse(
-      {required final Meta meta,
-      required final Data data,
-      required final int id,
+      {required final int id,
       required final String full_name,
       required final String email,
       final int age}) = _$_UserResponse;
@@ -252,11 +198,8 @@ abstract class _UserResponse implements UserResponse {
   factory _UserResponse.fromJson(Map<String, dynamic> json) =
       _$_UserResponse.fromJson;
 
-  @override
-  Meta get meta;
-  @override
-  Data get data;
-  @override
+  @override // required Meta meta,
+// required Data data,
   int get id;
   @override
   String get full_name;

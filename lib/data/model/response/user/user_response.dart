@@ -8,8 +8,8 @@ part 'user_response.g.dart';
 @Freezed()
 class UserResponse with _$UserResponse {
   const factory UserResponse({
-    required Meta meta,
-    required Data data,
+    // required Meta meta,
+    // required Data data,
     required int id,
     required String full_name,
     required String email,

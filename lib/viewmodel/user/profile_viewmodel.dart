@@ -1,23 +1,21 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:freezed_demo/data/model/response/user/user_response.dart';
-import 'package:freezed_demo/repo/user/user_repository.dart';
+import 'package:freezed_demo/viewmodel/base_viewmodel.dart';
 
-import '../base_viewmodel.dart';
+import '../../data/model/response/user/user_response.dart';
+import '../../ui/provider/user/profile_provider.dart';
 
-class ProfileViewModel extends StateNotifier<String>{
-  String value = "";
+class ProfileViewModel extends BaseViewModel {
+  // final UserRepository _userRepo;
 
+  // static final instance = UserRepository._();
 
-  ProfileViewModel(value) : super(value);
-
-  String getName() {
-    return value;
-  }
   // final UserRepository userRepo;
   //
   // ProfileViewModel(this.userRepo)
   //
-  // Future<UserResponse> getPersona() async {
-  //   return await userRepo.getPersona();
-  // }
+  FutureProvider<UserResponse> getPersona() {
+    return personalProfileProvider;
+  }
+
+  // final personalProvider = FutureProvider
 }
