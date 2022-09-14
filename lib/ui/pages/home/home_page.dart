@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:freezed_demo/viewmodel/user/profile_viewmodel.dart';
 import '../../provider/user/profile_provider.dart';
 
 class HomePage extends ConsumerWidget {
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final apiProvider = ref.watch(personalProfileProvider);
@@ -16,7 +14,7 @@ class HomePage extends ConsumerWidget {
       body: Center(
           child: apiProvider.when(
         data: (data) {
-          return getColumn(data.email);
+          return getColumn(data.full_name);
         },
         error: (err, stack) => Text("Errror: ${err.toString()}"),
         loading: () => Text("Loading..."),
