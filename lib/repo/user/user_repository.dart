@@ -1,13 +1,12 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_demo/data/model/response/user/user_response.dart';
 import 'package:freezed_demo/repo/base_repository.dart';
 
 import '../../data/remote/api/api_service.dart';
 
 class UserRepository implements BaseRepository {
-
-  UserRepository._();
-  static final instance = UserRepository._();
+  static final userRepoProvider = Provider((ref) => UserRepository());
 
   @override
   Future<UserResponse> getPersona() async {

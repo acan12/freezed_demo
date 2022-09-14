@@ -4,7 +4,6 @@ import 'package:freezed_demo/viewmodel/user/profile_viewmodel.dart';
 import '../../provider/user/profile_provider.dart';
 
 class HomePage extends ConsumerWidget {
-  static final profileViewModel = ProfileViewModel();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
