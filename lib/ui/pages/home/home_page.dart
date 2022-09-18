@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:freezed_demo/data/model/entity/employee.dart';
 import '../../provider/user/profile_provider.dart';
 
 class HomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final viewmodel =  ref.watch(profileViewmodelProvider);
     final apiProvider = ref.watch(personalProfileProvider);
 
     return Scaffold(
@@ -21,6 +23,7 @@ class HomePage extends ConsumerWidget {
       )),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          viewmodel.userRepo.addEmployee(Employee(1, "Dono", "dono_demo@mail.com", "28"));
           // ref.read(myprovider.notifier).state++;
         },
         tooltip: 'Increment',

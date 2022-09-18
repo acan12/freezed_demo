@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:freezed_demo/data/model/entity/employee.dart';
 import 'package:freezed_demo/repo/base_repository.dart';
 import 'package:freezed_demo/viewmodel/base_viewmodel.dart';
 
@@ -11,4 +12,6 @@ class ProfileViewModel extends BaseViewModel {
   ProfileViewModel(this.userRepo);
 
   Future<UserResponse> getPersona() => userRepo.getPersona();
+
+  addEmployee(Employee employee) => userRepo.addEmployee(employee);
 }
