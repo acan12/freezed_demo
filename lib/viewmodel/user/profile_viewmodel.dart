@@ -1,14 +1,20 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:freezed_demo/repo/base_repository.dart';
-import 'package:freezed_demo/viewmodel/base_viewmodel.dart';
+import 'package:freezed_demo/data/model/entity/employee.dart';
 
 import '../../data/model/response/user/user_response.dart';
 import '../../repo/user/user_repository.dart';
-import '../../ui/provider/user/profile_provider.dart';
 
-class ProfileViewModel extends BaseViewModel {
-  final BaseRepository userRepo;
-  ProfileViewModel(this.userRepo);
+final personaViewModelProvider = FutureProvider<UserResponse>(
+  (ref) => ProfileViewModel().getPersona(),);
+
+final allEmployeeProvider = FutureProvider<List<Employee>>(
+    (ref) => ProfileViewModel().getAllEmployee());
+
+class ProfileViewModel extends ChangeNotifier {
+  final UserRepository userRepo = UserRepository();
 
   Future<UserResponse> getPersona() => userRepo.getPersona();
+
+  Future<List<Employee>> getAllEmployee() => userRepo.getAllEmployee();
 }

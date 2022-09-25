@@ -11,7 +11,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  floor: ^1.3.0                         # local database
+#  floor: ^1.2.0                         # local database
+  path_provider: ^2.0.11                 # local database
+  hive: ^2.2.3                           # local database
+  hive_flutter: ^1.1.0                   # local database
   cupertino_icons: ^1.0.2
   json_annotation: ^4.6.0
   freezed_annotation: ^2.1.0
@@ -21,6 +24,7 @@ dependencies:
   logger: ^1.0.0
   dio: ^4.0.6
   pretty_dio_logger: ^1.1.1
+  intl: ^0.17.0                         # Format dates
   flutter_launcher_icons: ^0.10.0       # launcher config
   google_fonts: ^3.0.1                  # google font collection
   easy_localization: ^3.0.1             # i18n language
@@ -29,7 +33,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  floor_generator: ^1.3.0
+#  floor_generator: ^1.2.0
+  hive_generator: ^1.1.3
   freezed: ^2.1.0+1                     # make slim model code
   retrofit_generator: ^4.0.3+1
   build_runner: ^2.0.6

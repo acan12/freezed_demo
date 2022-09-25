@@ -1,13 +1,17 @@
-import 'package:floor/floor.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:hive/hive.dart';
 
-@entity
-class Employee {
-  @PrimaryKey(autoGenerate: true)
-  final int? id;
-  final String full_name;
-  final String email;
-  final String age;
+part 'employee.g.dart';
 
-  Employee(this.id, this.full_name, this.email, this.age);
+@HiveType(typeId: 0)
+class Employee extends HiveObject{
+  @HiveField(0)
+  late String name;
+  @HiveField(1)
+  late String full_name;
+  @HiveField(2)
+  late String email;
+  @HiveField(3)
+  late String age;
+
+  Employee(this.name, this.full_name, this.age, this.email);
 }
